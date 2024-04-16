@@ -89,7 +89,7 @@ var aminokwasy = ""
     {
         val temp = rna.uppercase().subSequence(i, i+3)
 
-        println(temp)
+
         if(mapaAminokwasow.containsKey(temp.toString()))
         {
             if(mapaAminokwasow.getValue(temp.toString())=="Stop"){ break}
@@ -107,8 +107,35 @@ var aminokwasy = ""
 
 }
 
+/**
+ * Funkcja testująca funkcji komplement()
+ */
+fun testKomplement()
+{
+    assert(komplement("aatgttg")=="CAACATT", {"Test funkcji komplement zakończony niepowodzeniem"})
+    println("Test funkcji komplement zakończony powodzeniem")
+}
+
+/**
+ * Funkcja testująca funkcji transkrybuj()
+ */
+fun testTranskrybuj()
+{
+    assert(transkrybuj("aatgttg") =="CAACAUU", {"Test funkcji transkrybuj zakończony niepowodzeniem"})
+    println("Test funkcji transkrybuj zakończony powodzeniem")
+}
+/**
+ * Funkcja testująca funkcji transluj()
+ */
+fun testTransluj()
+{
+    assert(transluj("aauguug") =="Asn Val ", {"Test funkcji transluj zakończony niepowodzeniem"})
+    println("Test funkcji transluj zakończony powodzeniem")
+}
 fun main()
 {
-println(transkrybuj(komplement("aatgggt")) )
-    println(transluj("aaagaa"))
+  testKomplement()
+    testTranskrybuj()
+    testTransluj()
+
 }
